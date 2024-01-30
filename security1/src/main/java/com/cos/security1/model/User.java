@@ -20,11 +20,12 @@ public class User {
 	private int id;
 	private String username;
 	private String password;
-	private String email;
-	private String role;
+	private String email; // -> @DiscriminatorValue("B") 상속받는 구조로 설계해보기 !
+	private String role; // enum 타입 String 으로 엔티티 매핑
 	
 	private String provider;
 	private String providerId;
+	
 	@CreationTimestamp
 	private Timestamp createDate;
 	

@@ -27,20 +27,24 @@ public class IndexController {
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	/*
-	 * Spring Security는 기본 세션에 일부분으로 Security Session을 가진다. Securiy Session 에는
-	 * SecurityContext[ Authentication ] 객체만이 저장될수 있음. Authentication 객체에는
-	 * UserDetails , OAuth2User 타입 가능 일반 유저가 로그인을 하게되면 UserDetails 타입 , 소셜로그인으로
-	 * OAuth 로그인을 하게되면 OAuth2User 타입 컨트롤러 메쏘드에서 상황별로 다른 타입을 인젝션? X --> 두 타입을 구현하는
-	 * 클래스를 생성,그 클래스에서 메쏘드 재정의, 컨트롤러는 그 클래스 DI
+	 * Spring Security 는 기본 세션에 일부분으로 Security Session 을 가진다.
+	 * Security Session 에는 SecurityContext [ Authentication ] 객체만이 저장될수 있음.
+	 * Authentication 객체에는 UserDetails , OAuth2User 타입 가능
+	 * 일반 유저가 로그인을 하게되면 UserDetails 타입 , 소셜로그인 OAuth 로그인을 하게되면 OAuth2User 타입
+	 * 그렇다면 컨트롤러 메쏘드에서 상황별로 다른 타입을 인젝션?
+	 * 그것보다는 두 타입을 구현하는 클래스를 생성, 그 클래스에서 메쏘드 재정의, 컨트롤러는 그 클래스 DI
 	 */
 
 	/*
-	 * 회원 정보를 얻는 2가지 방법 1. Authentication 타입 DI 후 접근 2. @AuthenticationPrincipal
-	 * UserDetails,OAuth2User 타입 선언 후 접근
+	 * 회원 정보를 얻는 2가지 방법
+	 * 1. Authentication 타입 DI 후 접근
+	 * 2. @AuthenticationPrincipal UserDetails,OAuth2User 타입 선언 후 접근
 	 */
+
 	@GetMapping("/test/login")
 	public @ResponseBody String loginTest(Authentication authentication, // 의존성 주입
-			@AuthenticationPrincipal PrincipalDetails userDetails) { // PrincipalDetails == UserDetails 상속
+			@AuthenticationPrincipal PrincipalDetails userDetails) {
+		// PrincipalDetails == UserDetails 상속
 		// @AuthenticationPrincipal 어노테이션을 사용해서 세션 정보에 접근이 가능하다.
 		PrincipalDetails contextHolder = (PrincipalDetails) SecurityContextHolder.getContext().getAuthentication()
 				.getPrincipal();
@@ -75,7 +79,9 @@ public class IndexController {
 	}
 
 	@GetMapping("/admin")
-	public @ResponseBody String admin() {
+	public @ResponseBody String admin(@AuthenticationPrincipal PrincipalDetails pds) {
+		System.out.println("indext Controller ADMIN........ " + pds.getUsername() +pds.getAuthorities());
+		System.out.println("index Controller ADMIN.... 찍혀야할텐데....");
 		return "admin ";
 	}
 

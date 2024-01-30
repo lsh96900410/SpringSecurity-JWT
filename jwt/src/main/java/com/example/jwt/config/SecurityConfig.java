@@ -27,28 +27,38 @@ public class SecurityConfig{
 
 	private final CorsFilter corsFilter;
 	private final UserRepository userRepository;
-	
+
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.apply(new MyCustomDsl());
-		//http.addFilterBefore(new MyFilter1(),BasicAuthenticationFilter.class); 
+
+		//http.addFilterBefore(new MyFilter1(),BasicAuthenticationFilter.class);
 		// 커스텀필터는 시큐리티필터에 등록 불가 --> 특정 필터 이전 이후 실행으로 설정해줘야함 
 		http.csrf(CsrfConfigurer::disable); // csrf 보호 비활성 , csrf 토큰 X
-		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) // 세션 사용 X,stateless 서버
-		.and()
-		.addFilter(corsFilter)
-		//.addFilter(new JwtAuthenticationFilter())
-		.formLogin().disable()
-		.httpBasic().disable(); // httpBasic 방식 : 헤더 영역에 id,pw 담음 vs http bearer 방식 : 헤어 영역에 token 담음 
-		http.authorizeHttpRequests(authorize -> authorize
-				.requestMatchers("/api/v1/user/**")
-				//.hasAnyRole("USER","MANAGER","ADMIN")
-				.hasRole("USER")
-				.requestMatchers("/api/v1/manager/**")
-				.hasAnyRole("MANAGER","ADMIN")
-				.requestMatchers("/api/v1/admin/**")
-				.hasAnyRole("ADMIN")
-				.anyRequest().permitAll());
+		http.sessionManagement(smCustomize ->
+				smCustomize.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+
+		AuthenticationManager authenticationManager = http.getSharedObject(AuthenticationManager.class);
+		http.addFilter(corsFilter);
+		http.addFilter(new JwtAuthenticationFilter(authenticationManager));
+		http.addFilter(new JwtAuthorizationFilter(authenticationManager,userRepository));
+
+		http.formLogin(formLoginConfigurer-> {
+            try {
+				formLoginConfigurer.disable().httpBasic(httpBasicConfigurer
+						->httpBasicConfigurer.disable());
+				// httpBasic 방식 : Header 영역에 id,pw 담음 vs http bearer 방식 :Header 영역에 token 담음
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+		http.authorizeHttpRequests(authorize ->
+				authorize.requestMatchers("/api/v1/user/**").authenticated()
+						 .requestMatchers("/api/v1/manager/**").hasAnyRole("MANAGER","ADMIN")
+						 .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
+						 .anyRequest().permitAll());
+
 		return http.build();
 	}
 	public class MyCustomDsl extends AbstractHttpConfigurer<MyCustomDsl, HttpSecurity> {

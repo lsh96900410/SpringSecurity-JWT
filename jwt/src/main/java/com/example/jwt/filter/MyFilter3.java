@@ -30,7 +30,8 @@ public class MyFilter3 implements Filter {
 			String headerAuth = req.getHeader("Authorization");
 			System.out.println(headerAuth);
 			
-			// 인증 O -> 계속 진행 , 인증 X -> 필터에서 걸러냄(필터는 스프링으로 들어오기전에 실행 )
+			// 인증 O -> 계속 진행
+			// 인증 X -> 필터에서 걸러냄 (필터는 스프링으로 들어오기전에 실행 )
 			if(headerAuth.equals("skydog")) {
 				chain.doFilter(req, res);// 프로그램 종료 x , 계속 실행 
 			}else {

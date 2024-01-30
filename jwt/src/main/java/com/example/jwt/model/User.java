@@ -24,7 +24,7 @@ public class User {
 	private String password;
 	private String roles; // USER,ADMIN
 	
-	// 한 유저에 role이 2개이상 가능 
+	// 한 유저에 role 이 2개이상 가능
 	public List<String> getRoleList(){
 		if(this.roles.length()>0) {
 			return Arrays.asList(this.roles.split(","));
