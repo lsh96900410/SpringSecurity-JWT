@@ -1,0 +1,7 @@
+
+g	java:S1124"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8şÎ·Ñ×1
+W	java:S125!"<This block of commented-out lines of code should be removed.(â×Òh8ŠÏ·Ñ×1
+W	java:S125#"<This block of commented-out lines of code should be removed.(©¾Èt8ŠÏ·Ñ×1
+i
+java:S16121"LReplace this lambda with method reference 'AbstractHttpConfigurer::disable'.(÷ş—Í8Ï·Ñ×1
+G	java:S106C"+Replace this use of System.out by a logger.(¾‚ƒ˜8‘Ï·Ñ×1

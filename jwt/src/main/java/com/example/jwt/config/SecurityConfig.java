@@ -30,7 +30,7 @@ public class SecurityConfig{
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http.apply(new MyCustomDsl());
+		//http.apply(new MyCustomDsl());
 
 		//http.addFilterBefore(new MyFilter1(),BasicAuthenticationFilter.class);
 		// 커스텀필터는 시큐리티필터에 등록 불가 --> 특정 필터 이전 이후 실행으로 설정해줘야함 

@@ -1,0 +1,9 @@
+
+`
+java:S2583("CChange this condition so that it does not always evaluate to "true"(ÁÂÛ½8ÂŠ×ÎÕ1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8µ½¼¯Õ1
+G	java:S106'"+Replace this use of System.out by a logger.(Ğ¿†¤8îêÖÎÕ1
+G	java:S106)"+Replace this use of System.out by a logger.(Æ©ìÇ8ÖµÙÎÕ1
+L	java:S106,"+Replace this use of System.out by a logger.(òéóÄøÿÿÿÿ8ö–ÏÕ1
+X	java:S125."<This block of commented-out lines of code should be removed.(„§ñ£8½½¼¯Õ1

@@ -1,0 +1,18 @@
+
+i
+java:S22597"LA "NullPointerException" could be thrown; "oAuth2UserInfo" is nullable here.(¸Ú–¤8ğıøÏÕ1
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+@	java:S106!"+Replace this use of System.out by a logger.(òá®í
+@	java:S106#"+Replace this use of System.out by a logger.(Ç¿”á
+?	java:S106'"+Replace this use of System.out by a logger.(“ÍÑ>
+E	java:S106+"+Replace this use of System.out by a logger.(­›àÓÿÿÿÿÿ
+E	java:S106."+Replace this use of System.out by a logger.(Å¢Şåıÿÿÿÿ
+@	java:S1061"+Replace this use of System.out by a logger.(ö§ªÅ
+E	java:S1064"+Replace this use of System.out by a logger.(ÿÇ·ñúÿÿÿÿ
+L
+java:S6437:"6Revoke and change this password, as it is compromised.(³ËÄæ
+G	java:S106D"+Replace this use of System.out by a logger.(æË¡ƒ8åÊÚ°Õ1
+G	java:S106F"+Replace this use of System.out by a logger.( §Í²8æÊÚ°Õ1

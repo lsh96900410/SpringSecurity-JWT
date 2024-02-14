@@ -1,0 +1,11 @@
+
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8ÎŒ™ÎÕ1
+t
+java:S3305"RInject this field value directly into "filterChain", the only method that uses it.(»ËŸÊüÿÿÿÿ8ÏŒ™ÎÕ1
+T
+java:S11355"2Complete the task associated to this TODO comment.(ñ‚ŽÄúÿÿÿÿ8ÓŒ™ÎÕ1
+]	java:S125>"<This block of commented-out lines of code should be removed.(—ƒÓôøÿÿÿÿ8ÔŒ™ÎÕ1
+
+java:S1128
+"]Remove this unused import 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder'.(åÅÚ…ûÿÿÿÿ8ÔŒ™ÎÕ1

@@ -1,0 +1,12 @@
+
+J
+java:S16044"(Make this anonymous inner class a lambda(ÈÃßùúÿÿÿÿ8ÿ†ÏÕ1
+H
+java:S1948"&Make "user" transient or serializable.(¡çÑ¿ùÿÿÿÿ8ÿ†ÏÕ1
+N
+java:S1948",Make "attributes" transient or serializable.(¼ÛìÌúÿÿÿÿ8ÿ†ÏÕ1
+L	java:S106""+Replace this use of System.out by a logger.(™‘ı¿øÿÿÿÿ8ÿ†ÏÕ1
+G	java:S106:"+Replace this use of System.out by a logger.(»”Ö™8•ÿ†ÏÕ1
+G	java:S106;"+Replace this use of System.out by a logger.(ÈÚó„8•ÿ†ÏÕ1
+G	java:S106<"+Replace this use of System.out by a logger.(…ÖëÛ8–ÿ†ÏÕ1
+]	java:S125c"<This block of commented-out lines of code should be removed.(Î™ÃÊıÿÿÿÿ8šÿ†ÏÕ1
