@@ -1,8 +1,10 @@
 
-###   Security Session  >  Authenticaion  >  PrincipalDetails [ UserDetails ( 홈페이지 ) , OAuth2User ( 외부 인증 ) ] 
+###  Security Session  >  Authenticaion  >  PrincipalDetails [ UserDetails ( 홈페이지 ) , OAuth2User ( 외부 인증 ) ] 
+
 ###
-### JWT :  https://jwt.io/introduction
-###
+
+# 🔎 JWT :  https://jwt.io/introduction
+
 ###
 ###  생성 시점 
 Spring Security 의 UsernamePasswordAuthenticationFilter 에서 생성
@@ -14,7 +16,8 @@ Spring Security의 BasicAuthenticationFilter ( 권한 및 인증이 필요한 �
 
 통과 :  Authenticaion 객체 생성 후 Security Session에 저장 ( JWT 토큰 서명을 통과 했기에 가능 )
 
-# 참고 자료 
+
+# 🔎 참고 자료 
 
 ###
 ![스프링 시큐리티](https://github.com/lsh96900410/aaa/assets/133841235/ea1b853e-6f7d-4f9b-b8de-3fc13ce95d5b)
