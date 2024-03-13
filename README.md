@@ -20,10 +20,10 @@ Spring Security의 BasicAuthenticationFilter ( 권한 및 인증이 필요한 �
 # 🔎 참고 자료 
 
 ###
-![스프링 시큐리티](https://github.com/lsh96900410/aaa/assets/133841235/ea1b853e-6f7d-4f9b-b8de-3fc13ce95d5b)
+![스프링 시큐리티](https://github.com/lsh96900410/SpringSecurity-JWT/assets/133841235/f38e79e1-79b2-4fc3-be79-5e0683bf614c)
 
 
 ###
-![스프링 시큐리티 2](https://github.com/lsh96900410/aaa/assets/133841235/89385acb-de44-4c38-8d46-b526c8b48868)
+![스프링 시큐리티 2](https://github.com/lsh96900410/SpringSecurity-JWT/assets/133841235/a0c3c6d3-172f-4dca-8864-5112df4d98c5)
 
 
